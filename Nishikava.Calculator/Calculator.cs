@@ -22,6 +22,10 @@ namespace Nishikava.Calculator
             
         }
 
+        /// <summary>
+        /// Displaying characters
+        /// </summary>
+        /// <param name="symbol">accepts a specific character</param>
         public void OutputSymbol(string symbol)
         {
             if (OutputWindow.Text != null)
@@ -33,6 +37,7 @@ namespace Nishikava.Calculator
                 OutputWindow.Text = symbol;
             }
         }
+
         private void One_Click(object sender, EventArgs e)
         {
             OutputSymbol("1");
@@ -88,9 +93,28 @@ namespace Nishikava.Calculator
             OutputWindow.Clear();
         }
 
+        /// <summary>
+        /// Delete one character
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, EventArgs e)
         {
+            string[] text = new string[OutputWindow.Text.Length];
+            int counter = 0;
 
+            for (counter = 0; counter < OutputWindow.Text.Length; counter++)
+            {
+                text[counter] = OutputWindow.Text[counter].ToString();
+            }
+
+            text[counter-1] = null;
+            OutputWindow.Clear();
+
+            for(int counterOutputWindow = 0; counterOutputWindow < text.Length; counterOutputWindow++)
+            {
+                OutputWindow.Text = OutputWindow.Text + text[counterOutputWindow];
+            }
         }
 
         private void Division_Click(object sender, EventArgs e)
@@ -130,7 +154,7 @@ namespace Nishikava.Calculator
 
         private void Equals_Click(object sender, EventArgs e)
         {
-            OutputSymbol("=");
+            
         }
     }
 }
