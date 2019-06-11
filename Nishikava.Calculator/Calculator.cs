@@ -19,7 +19,7 @@ namespace Nishikava.Calculator
 
         private void Calculator_Load(object sender, EventArgs e)
         {
-            
+            OutputWindow.TextAlign = HorizontalAlignment.Right;
         }
 
         /// <summary>
@@ -93,27 +93,29 @@ namespace Nishikava.Calculator
             OutputWindow.Clear();
         }
 
-        /// <summary>
-        /// Delete one character
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Delete_Click(object sender, EventArgs e)
+        private void DeleteOneCharacter_Click(object sender, EventArgs e)
         {
-            string[] text = new string[OutputWindow.Text.Length];
-            int counter = 0;
+            string[] text = new string[OutputWindow.TextLength];
+            int counterIndex = 0;
 
-            for (counter = 0; counter < OutputWindow.Text.Length; counter++)
+            for (counterIndex = 0; counterIndex < OutputWindow.TextLength; counterIndex++)
             {
-                text[counter] = OutputWindow.Text[counter].ToString();
+                text[counterIndex] = OutputWindow.Text[counterIndex].ToString();
             }
 
-            text[counter-1] = null;
-            OutputWindow.Clear();
-
-            for(int counterOutputWindow = 0; counterOutputWindow < text.Length; counterOutputWindow++)
+            if (text.Length == 0)
             {
-                OutputWindow.Text = OutputWindow.Text + text[counterOutputWindow];
+
+            }
+            else
+            {
+                text[counterIndex - 1] = null;
+                OutputWindow.Clear();
+            }
+
+            for (int counterOutputWindow = 0; counterOutputWindow < text.Length; counterOutputWindow++)
+            {
+                OutputSymbol(text[counterOutputWindow]);
             }
         }
 
@@ -139,7 +141,30 @@ namespace Nishikava.Calculator
 
         private void Parentheses_Click(object sender, EventArgs e)
         {
+            string[] text = new string[OutputWindow.TextLength];
+            int numberOfParentesis = 0;
 
+            for (int counterIndex = 0; counterIndex < OutputWindow.TextLength; counterIndex++)
+            {
+                text[counterIndex] = OutputWindow.Text[counterIndex].ToString();
+
+                if (text[counterIndex] == "(" || text[counterIndex] == ")")
+                {
+                    numberOfParentesis++;
+                }
+            }
+            
+            var parity = numberOfParentesis % 2 == 0 ? true : false;
+
+            switch(parity)
+            {
+                case true: OutputSymbol("(");
+                    break;
+                case false: OutputSymbol(")");
+                    break;
+                default:
+                    break;
+            }           
         }
 
         private void DecimalSeparator_Click(object sender, EventArgs e)
@@ -156,5 +181,6 @@ namespace Nishikava.Calculator
         {
             
         }
+       
     }
 }

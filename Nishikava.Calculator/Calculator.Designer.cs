@@ -40,7 +40,7 @@
             this.Clear = new System.Windows.Forms.Button();
             this.Division = new System.Windows.Forms.Button();
             this.Multiplication = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
+            this.DeleteOneCharacter = new System.Windows.Forms.Button();
             this.Subtraction = new System.Windows.Forms.Button();
             this.Addition = new System.Windows.Forms.Button();
             this.Parentheses = new System.Windows.Forms.Button();
@@ -183,16 +183,16 @@
             this.Multiplication.UseVisualStyleBackColor = false;
             this.Multiplication.Click += new System.EventHandler(this.Multiplication_Click);
             // 
-            // Delete
+            // DeleteOneCharacter
             // 
-            this.Delete.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Delete.Location = new System.Drawing.Point(374, 196);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(38, 38);
-            this.Delete.TabIndex = 12;
-            this.Delete.Text = "<";
-            this.Delete.UseVisualStyleBackColor = false;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.DeleteOneCharacter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteOneCharacter.Location = new System.Drawing.Point(374, 196);
+            this.DeleteOneCharacter.Name = "DeleteOneCharacter";
+            this.DeleteOneCharacter.Size = new System.Drawing.Size(38, 38);
+            this.DeleteOneCharacter.TabIndex = 12;
+            this.DeleteOneCharacter.Text = "<";
+            this.DeleteOneCharacter.UseVisualStyleBackColor = false;
+            this.DeleteOneCharacter.Click += new System.EventHandler(this.DeleteOneCharacter_Click);
             // 
             // Subtraction
             // 
@@ -273,6 +273,7 @@
             // 
             // OutputWindow
             // 
+            this.OutputWindow.Font = new System.Drawing.Font("Calisto MT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutputWindow.Location = new System.Drawing.Point(12, 12);
             this.OutputWindow.Multiline = true;
             this.OutputWindow.Name = "OutputWindow";
@@ -292,7 +293,7 @@
             this.Controls.Add(this.Parentheses);
             this.Controls.Add(this.Addition);
             this.Controls.Add(this.Subtraction);
-            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.DeleteOneCharacter);
             this.Controls.Add(this.Multiplication);
             this.Controls.Add(this.Division);
             this.Controls.Add(this.Clear);
@@ -327,7 +328,7 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Division;
         private System.Windows.Forms.Button Multiplication;
-        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button DeleteOneCharacter;
         private System.Windows.Forms.Button Subtraction;
         private System.Windows.Forms.Button Addition;
         private System.Windows.Forms.Button Parentheses;
