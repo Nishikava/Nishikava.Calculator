@@ -126,7 +126,7 @@ namespace Nishikava.Calculator
 
         private void Multiplication_Click(object sender, EventArgs e)
         {
-            OutputSymbol("x");
+            OutputSymbol("*");
         }
 
         private void Subtraction_Click(object sender, EventArgs e)
@@ -140,15 +140,12 @@ namespace Nishikava.Calculator
         }
 
         private void Parentheses_Click(object sender, EventArgs e)
-        {
-            string[] text = new string[OutputWindow.TextLength];
+        {           
             int numberOfParentesis = 0;
 
             for (int counterIndex = 0; counterIndex < OutputWindow.TextLength; counterIndex++)
-            {
-                text[counterIndex] = OutputWindow.Text[counterIndex].ToString();
-
-                if (text[counterIndex] == "(" || text[counterIndex] == ")")
+            {               
+                if (OutputWindow.Text[counterIndex].ToString() == "(" || OutputWindow.Text[counterIndex].ToString() == ")")
                 {
                     numberOfParentesis++;
                 }
@@ -156,11 +153,45 @@ namespace Nishikava.Calculator
             
             var parity = numberOfParentesis % 2 == 0 ? true : false;
 
-            switch(parity)
+            //TODO: fix a bug with a closing parenthesis
+            switch (parity)
             {
-                case true: OutputSymbol("(");
+                case true:
+                    if (numberOfParentesis == 0)
+                    {
+                        OutputSymbol("(");
+                    }
+                    if (OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == "-" ||
+                     OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == "+" ||
+                     OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == "*" ||
+                     OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == "/" ||
+                     OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == "(")
+                    {
+                        if(numberOfParentesis != 0)
+                        {
+                            OutputSymbol("(");
+                        }
+                        
+                    }
+                    else
+                    {
+                        OutputSymbol(")");
+                    }
+                    
                     break;
-                case false: OutputSymbol(")");
+                case false:
+                    if (OutputWindow.Text[OutputWindow.TextLength-1].ToString() == "(" ||
+                     OutputWindow.Text[OutputWindow.TextLength-1].ToString() == "-" ||
+                     OutputWindow.Text[OutputWindow.TextLength-1].ToString() == "+" || 
+                     OutputWindow.Text[OutputWindow.TextLength-1].ToString() == "*" ||
+                     OutputWindow.Text[OutputWindow.TextLength-1].ToString() == "/")
+                    {
+                        OutputSymbol("(");
+                    }
+                    else
+                    {
+                        OutputSymbol(")");
+                    }                   
                     break;
                 default:
                     break;

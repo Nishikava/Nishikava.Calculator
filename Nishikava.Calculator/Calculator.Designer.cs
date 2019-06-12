@@ -164,6 +164,7 @@
             // Division
             // 
             this.Division.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Division.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Division.Location = new System.Drawing.Point(286, 196);
             this.Division.Name = "Division";
             this.Division.Size = new System.Drawing.Size(38, 38);
@@ -175,17 +176,20 @@
             // Multiplication
             // 
             this.Multiplication.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Multiplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Multiplication.Location = new System.Drawing.Point(330, 196);
             this.Multiplication.Name = "Multiplication";
             this.Multiplication.Size = new System.Drawing.Size(38, 38);
             this.Multiplication.TabIndex = 11;
-            this.Multiplication.Text = "X";
+            this.Multiplication.Text = "*";
+            this.Multiplication.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Multiplication.UseVisualStyleBackColor = false;
             this.Multiplication.Click += new System.EventHandler(this.Multiplication_Click);
             // 
             // DeleteOneCharacter
             // 
             this.DeleteOneCharacter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteOneCharacter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DeleteOneCharacter.Location = new System.Drawing.Point(374, 196);
             this.DeleteOneCharacter.Name = "DeleteOneCharacter";
             this.DeleteOneCharacter.Size = new System.Drawing.Size(38, 38);
@@ -197,17 +201,19 @@
             // Subtraction
             // 
             this.Subtraction.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Subtraction.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Subtraction.Location = new System.Drawing.Point(374, 240);
             this.Subtraction.Name = "Subtraction";
             this.Subtraction.Size = new System.Drawing.Size(38, 38);
             this.Subtraction.TabIndex = 13;
-            this.Subtraction.Text = "--";
+            this.Subtraction.Text = "-";
             this.Subtraction.UseVisualStyleBackColor = false;
             this.Subtraction.Click += new System.EventHandler(this.Subtraction_Click);
             // 
             // Addition
             // 
             this.Addition.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Addition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Addition.Location = new System.Drawing.Point(374, 284);
             this.Addition.Name = "Addition";
             this.Addition.Size = new System.Drawing.Size(38, 38);
@@ -219,11 +225,12 @@
             // Parentheses
             // 
             this.Parentheses.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Parentheses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Parentheses.Location = new System.Drawing.Point(374, 328);
             this.Parentheses.Name = "Parentheses";
             this.Parentheses.Size = new System.Drawing.Size(38, 38);
             this.Parentheses.TabIndex = 15;
-            this.Parentheses.Text = "(   )";
+            this.Parentheses.Text = "(  )";
             this.Parentheses.UseVisualStyleBackColor = false;
             this.Parentheses.Click += new System.EventHandler(this.Parentheses_Click);
             // 
@@ -241,6 +248,7 @@
             // DecimalSeparator
             // 
             this.DecimalSeparator.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DecimalSeparator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DecimalSeparator.Location = new System.Drawing.Point(286, 372);
             this.DecimalSeparator.Name = "DecimalSeparator";
             this.DecimalSeparator.Size = new System.Drawing.Size(38, 38);
@@ -252,6 +260,7 @@
             // PositiveOrNegative
             // 
             this.PositiveOrNegative.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PositiveOrNegative.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PositiveOrNegative.Location = new System.Drawing.Point(330, 372);
             this.PositiveOrNegative.Name = "PositiveOrNegative";
             this.PositiveOrNegative.Size = new System.Drawing.Size(38, 38);
@@ -263,6 +272,7 @@
             // Equals
             // 
             this.Equals.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Equals.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Equals.Location = new System.Drawing.Point(374, 372);
             this.Equals.Name = "Equals";
             this.Equals.Size = new System.Drawing.Size(38, 38);
@@ -307,6 +317,7 @@
             this.Controls.Add(this.Two);
             this.Controls.Add(this.One);
             this.Name = "Calculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
