@@ -153,7 +153,6 @@ namespace Nishikava.Calculator
             
             var parity = numberOfParentesis % 2 == 0 ? true : false;
 
-            //TODO: fix a bug with a closing parenthesis
             switch (parity)
             {
                 case true:
@@ -175,7 +174,14 @@ namespace Nishikava.Calculator
                     }
                     else
                     {
-                        OutputSymbol(")");
+                        if(parity == true && OutputWindow.Text[OutputWindow.TextLength - 1].ToString() == ")")
+                        {
+
+                        }
+                        else
+                        {
+                            OutputSymbol(")");
+                        }                        
                     }
                     
                     break;
